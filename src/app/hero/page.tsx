@@ -19,7 +19,7 @@ const Hero = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-80px)]">
                 {/* Col-1 */}
-                <div className='flex pl-5 pr-5 justify-end mb-16 flex-col order-2 lg:order-1 sm:mb-32 lg:justify-center lg:mb-0 2xl:pl-16'>
+                <div className='flex pl-5 pr-5 justify-end mb-10 flex-col order-2 lg:order-1 sm:mb-32 lg:justify-center lg:mb-0 2xl:pl-16'>
                     <p className='font-bold text-main'>Something</p>
                     <h1 className={`font-bold text-4xl tracking-tight${darkMode && "text-secondary"} sm:text-6xl`}>Stefano Alcantara</h1>
 
