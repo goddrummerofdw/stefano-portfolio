@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className='grid grid-cols-3'>
             {/* This is col1 */}
-            <div className='flex items-center pl-10 order-1 '>
+            <div className='flex items-center justify-center pl-10 order-1'>
                 <Link href={"https://www.facebook.com"}>
                     <Image
                         src="/images/logo.png"
@@ -32,7 +32,7 @@ const Navbar = () => {
                     <motion.li className='cursor-pointer ' whileHover={{ color: hoverColor, scale: hoverScale }}>Gallery</motion.li>
                     <motion.li className='cursor-pointer ' whileHover={{ color: hoverColor, scale: hoverScale }}>Contact</motion.li>
                 </ul>
-                <p>burger</p>
+                <p className='xl:hidden'>Burger </p>
 
             </div>
 
