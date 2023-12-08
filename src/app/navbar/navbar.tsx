@@ -3,7 +3,9 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image'
 import Link from 'next/link';
-import Logo from '../../../public/images/SoloFirma.jpg'
+// Images
+import Logo from '../../../public/images/navbar/logo.jpg'
+
 const Navbar = () => {
     const [isOpen, toggleOpen] = React.useState(false);
     const hoverColor = `#FD5956`

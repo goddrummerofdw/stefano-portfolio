@@ -16,9 +16,10 @@ const Page = () => {
 
     return (
         <div className='flex justify-center items-center flex-col'>
-            <h1 className={`z-10 font-bold text-4xl tracking-tight ${darkMode && "text-secondary"} sm:text-6xl text-left lg:text-center`}> Gallery</h1>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-5/6">
+
+            <h1 className={`z-10 font-bold text-4xl tracking-tight ${darkMode && "text-secondary"} sm:text-6xl text-left lg:text-center w-5/6`}> Gallery</h1>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-5/6 mt-10">
                 {imageArray.map((e: string, i: number) => {
                     return <motion.div whileHover={{ scale: 0.90 }} className='flex justify-center items-center'
                         key={i} >

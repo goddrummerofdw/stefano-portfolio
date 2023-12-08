@@ -5,7 +5,7 @@ import { useDarkMode } from '../darkmode/darkmodecontext';
 import Image from 'next/image';
 
 //Image Source
-import heroImage from '../../../public/images/header-image-view.png'
+import heroImage from '../../../public/images/hero/hero.png'
 
 
 const Hero = () => {
@@ -21,7 +21,7 @@ const Hero = () => {
                     <h1 className={`z-10 font-bold text-4xl tracking-tight ${darkMode && "text-secondary"} sm:text-6xl`}>Stefano Alcantara</h1>
 
                     <p className={`z-10 mt-5 ${darkMode && "text-secondary"}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi tempore architecto dolore quos deleniti ad esse.</p>
-                    
+
                     <div className='text-center lg:text-left'>
                         <motion.button
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
