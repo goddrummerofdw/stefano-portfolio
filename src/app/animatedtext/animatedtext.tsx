@@ -8,7 +8,7 @@ const AnimatedText = () => {
         setInterval(() => {
             setIndex((index) => index < words.length - 1 ? index + 1 : index);
         }, 3000)
-    }, [])
+    }, [words.length])
 
     const parent = {
         hidden: { opacity: 0 },

@@ -1,5 +1,5 @@
 import React from 'react'
-const inputStyle = "w-full h-14 text-black text-xl rounded-md pl-12 mt-8"
+const inputStyle = "w-full h-10 text-black text-md rounded-lg pl-4 mt-2 border-2 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6"
 interface FormInputProps {
     type: string;
     placeholder: string;
