@@ -3,17 +3,17 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image'
 import Link from 'next/link';
+import { useDarkMode } from '../darkmode/darkmodecontext';
 // Images
 import Logo from '../../../public/images/navbar/logo.jpg'
-
 const Navbar = () => {
     const [isOpen, toggleOpen] = React.useState(false);
     const hoverColor = `#FD5956`
     const hoverScale = 1.1
+    const { darkMode } = useDarkMode()
 
     return (
-        <div className='grid grid-cols-3'>
-
+        <div className={`grid grid-cols-3  bg-primary ${darkMode && "dark:bg-secondary text-secondary"}`}>
             {/* This is col1 */}
             <div className='flex items-center justify-center pl-10 order-1 xl:justify-start'>
                 <Link href={"/"} >

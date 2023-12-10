@@ -1,5 +1,5 @@
-import Image1 from '../../../public/images/masonry/1.jpeg'
-import Image2 from '../../../public/images/masonry/2.jpeg'
+import Image1 from '../../../public/images/masonry/1.jpg'
+import Image2 from '../../../public/images/masonry/2.jpg'
 import Image3 from '../../../public/images/masonry/3.jpeg'
 import Image4 from '../../../public/images/masonry/4.jpeg'
 import Image5 from '../../../public/images/masonry/5.jpeg'

@@ -1,9 +1,9 @@
-import Hero from './hero/page'
-import AboutMe from './aboutme/page'
-import Masonry from './masonry/page'
-import Blog from './blog/page'
-import Form from './form/page'
-import Footer from './footer/page'
+import Hero from './hero/hero'
+import AboutMe from './aboutme/aboutme'
+import Masonry from './masonry/masonry'
+import Blog from './blog/blog'
+import Form from './form/form'
+import Footer from './footer/footer'
 
 export default function Home() {
   return (

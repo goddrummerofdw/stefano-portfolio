@@ -2,15 +2,15 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
-import FormInput from '@/app/forminput'
+import FormInput from '@/app/form/forminput'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Alert from '@/app/alert'
+import Alert from '@/app/alerts/alert'
 import { useDarkMode } from '../darkmode/darkmodecontext';
 import Image from 'next/image';
 
 //Images 
-import CardImage from '../../../public/images/cardp.png'
+import CardImage from '../../../public/images/form/card.png'
 
 export default function Form() {
 
@@ -55,17 +55,17 @@ export default function Form() {
     });
 
     return (
-        <div className='flex justify-center items-center flex-col mt-4 '>
+        <div className={`flex justify-center items-center flex-col bg-primary ${darkMode && "dark:bg-secondary text-secondary"}`}>
 
-            <div className='w-5/6 2xl:w-2/5'>
-                <h1 className={`z-10 font-bold text-4xl tracking-tight ${darkMode && "text-secondary"} sm:text-6xl text-left lg:text-center`}> Drop Me a <span className='text-main'>Line</span></h1>
+            <div className='w-5/6 mt-10'>
+                <h1 className={`z-10 font-bold text-4xl tracking-tight ${darkMode && "text-secondary"} sm:text-6xl text-left `}> Drop Me a <span className='text-main'>Line</span></h1>
 
                 <p className='text-left md:center-left mb-12'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi eos animi libero. Commodi debitis enim necessitatibus ad illo? Omnis, amet dignissimos molestias tenetur explicabo id perspiciatis nostrum at porro earum!</p>
             </div>
 
 
             <div className='flex w-full h-auto justify-center'>
-                <div className="lg:grid grid-cols-2 w-5/6 shadow-xl rounded-3xl">
+                <div className={`lg:grid grid-cols-2 w-5/6 shadow-xl rounded-3xl ${darkMode && "shadow-slate-600 shadow-md"}`}>
 
                     <div className='relative pt-60 pb-60'>
                         <Image

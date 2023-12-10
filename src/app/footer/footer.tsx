@@ -1,12 +1,16 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { useDarkMode } from '../darkmode/darkmodecontext';
 // Images
 import Logo from '../../../public/images/navbar/logo.jpg'
 import Facebook from '../../../public/images/socialmedia/facebook.png'
 const Footer = () => {
+    const { darkMode } = useDarkMode()
+
     return (
-        <div className='flex justify-center flex-col items-center pt-10'>
+        <div className={`flex justify-center flex-col items-center pt-10  bg-primary ${darkMode && "dark:bg-secondary text-secondary"}`}>
             <Link href={"/"} >
                 <Image
                     src={Logo}
@@ -15,7 +19,6 @@ const Footer = () => {
                     height="200"
                 />
             </Link>
-
             <Link href={"https:facebook.com"} >
                 <Image
                     src={Facebook}
