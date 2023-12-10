@@ -22,7 +22,7 @@ const AboutMe = () => {
                 <div className='flex relative w-full md:w-1/2 h-4/6 justify-center items-center lg:order-first'>
 
                     <Image
-                        className='absolute w-[800px]'
+                        className='absolute w-[600px]'
                         src={Abstract}
                         alt="abstract-image"
                         sizes='1'
@@ -30,7 +30,7 @@ const AboutMe = () => {
 
                     <Image
                         // className='relative translate-y-[100px] lg:w-[400px] lg:h-[500px]'
-                        className=' absolute w-[300px] sm:w-[350px] pt-10'
+                        className='absolute w-[230px] sm:w-[300px] border-2'
                         src={Redreflection}
                         alt="redguy"
                         sizes='1'

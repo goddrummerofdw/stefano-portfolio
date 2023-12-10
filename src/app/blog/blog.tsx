@@ -19,7 +19,6 @@ const Blog = () => {
                 <div className='flex w-5/6 justify-between items-center max-lg:flex-col'>
                     {imageArray.map((e: { src: string, title: string, text: string }, i: number) => {
                         return <motion.div
-                            whileHover={{ scale: 1.05 }}
                             key={i}
                             className='w-[30%] max-lg:w-full mt-6'>
                             <Image

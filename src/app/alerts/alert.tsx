@@ -35,7 +35,7 @@ const Alert = ({ type, message }: AlertProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className={`p-4 rounded-md ${borderColor} ${bgColor} ${textColor}`}
+            className={`p-4 rounded-xl ${borderColor} ${bgColor} ${textColor}`}
             role="alert"
         >
             {message}

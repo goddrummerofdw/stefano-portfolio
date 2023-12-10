@@ -35,7 +35,7 @@ const Navbar = () => {
                     <motion.li className='cursor-pointer ' whileHover={{ color: hoverColor, scale: hoverScale }}>Contact</motion.li>
                 </ul>
 
-                <button className='ml-4' onClick={() => { toggleOpen(!isOpen), console.log(isOpen) }}>
+                <button className='ml-4' onClick={() => { toggleOpen(!isOpen) }}>
                     <svg width="30px" viewBox="0 0 24 24" fill="none" className='xl:hidden'>
                         <path d="M4 18L20 18" stroke="#FD5956" strokeWidth="2"
                             strokeLinecap="round" />
