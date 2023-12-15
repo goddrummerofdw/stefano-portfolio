@@ -3,7 +3,7 @@ import AboutMe from './aboutme/aboutme'
 import Masonry from './masonry/masonry'
 import Blog from './blog/blog'
 import Form from './form/form'
-import Video from './video/video'
+import Video from './videosection/video'
 import Footer from './footer/footer'
 
 export default function Home() {
