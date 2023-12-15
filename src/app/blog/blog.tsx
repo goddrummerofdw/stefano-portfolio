@@ -7,6 +7,8 @@ import { useDarkMode } from '../darkmode/darkmodecontext';
 const Blog = () => {
     let carousel: any = React.useRef()
     const { darkMode } = useDarkMode()
+
+
     return (
         <div className={`flex flex-col justify-center items-center lg:h-[80vh] bg-primary ${darkMode && "dark:bg-secondary text-secondary "}`}>
             <div className='w-5/6 mt-10'>

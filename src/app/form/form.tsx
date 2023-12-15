@@ -1,7 +1,6 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
-import { useRouter } from 'next/navigation';
 import FormInput from '@/app/form/forminput'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -9,23 +8,24 @@ import Alert from '@/app/alerts/alert'
 import { useDarkMode } from '../darkmode/darkmodecontext';
 import Image from 'next/image';
 
+
 //Images 
 import CardImage from '../../../public/images/form/card.png'
 
 export default function Form() {
-
     const [isAlertVisible, setAlertVisible] = React.useState(false);
     const [alertMessage, setAlertMessage] = React.useState("")
+    const [alertType, setAlertType] = React.useState("")
     const { darkMode } = useDarkMode()
 
-    const router = useRouter();
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
     const validationSchema = Yup.object().shape({
         firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
         lastName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
         email: Yup.string().email("Invalid email").required("Email is required"),
-        phone: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
+        phone: Yup.string().matches(phoneRegExp).required('Phone number is required'),
+        message: Yup.string().max(200, 'Must be 200 characters or less'),
     });
 
     const formik = useFormik({
@@ -38,22 +38,36 @@ export default function Form() {
             message: ''
         },
         onSubmit: data => {
-            fetch('/api/Form', {
+            fetch('/api/formdata', {
                 method: 'POST',
                 body: JSON.stringify(data)
             })
                 .then((res) => res.json())
                 .then((data) => {
+                    // if (data.status === 200 || 201) {
+                    //     //show alert here 
+                    //     formik.resetForm();
+                    //     console.log("Show sucessfully sent alert here")
+                    // } 
+                    setAlertVisible(true)
                     if (data.status === 200) {
-                        router.push('/dashboard')
-                    } else {
-                        setAlertVisible(true)
+                        console.log(data)
                         setAlertMessage(data.message)
+                        setAlertType("success")
+                        formik.resetForm();
+                    }
+                    else {
+                        // show error alert ehre
+                        console.log("Things did not work")
+             
+                        setAlertMessage(data.message)
+                        setAlertType("error")
                     }
                 });
         },
     });
 
+    1
     return (
         <div className={`flex justify-center items-center flex-col bg-primary ${darkMode && "dark:bg-secondary text-secondary"}`}>
 
@@ -145,16 +159,23 @@ export default function Form() {
                                 <div style={{ height: '20px', visibility: 'hidden' }}></div>
                             )}
 
-
-
                             <textarea
                                 id="message"
                                 name="message"
                                 rows={3}
                                 className="w-full h-48 text-black text-md rounded-lg pt-4 pl-4 pr-12 mt-2 border-2 block py-1.5 shadow-sm ring-1 ring-inset ring-gray-100 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6"
-
+                                value={formik.values.message}
+                                onChange={formik.handleChange}
                                 placeholder='How can I help?'
                             />
+
+                            {formik.touched.message && formik.errors.message ? (
+                                <div className='text-red-600' style={{ height: '20px' }}>
+                                    {formik.errors.message}
+                                </div>
+                            ) : (
+                                <div style={{ height: '20px', visibility: 'hidden' }}></div>
+                            )}
 
 
                             <motion.button
@@ -166,16 +187,22 @@ export default function Form() {
                                 Submit
                             </motion.button>
                         </div>
-                        <div className='absolute center bottom-10'>
+                        <div className='center bottom-10'>
                             {isAlertVisible &&
                                 <Alert
-                                    type="error"
+                                    type={alertType}
                                     message={alertMessage}
                                 />}
                         </div>
+
                     </form>
+
                 </div>
+
             </div>
         </div >
+
     )
 }
+
+

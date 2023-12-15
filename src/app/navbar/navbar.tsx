@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useDarkMode } from '../darkmode/darkmodecontext';
 // Images
 import Logo from '../../../public/images/navbar/logo.jpg'
+import LogoDark from '../../../public/images/navbar/logo-dark.jpg'
 const Navbar = () => {
     const [isOpen, toggleOpen] = React.useState(false);
     const hoverColor = `#FD5956`
@@ -18,7 +19,7 @@ const Navbar = () => {
             <div className='flex items-center justify-center pl-10 order-1 xl:justify-start'>
                 <Link href={"/"} >
                     <Image
-                        src={Logo}
+                        src={darkMode ? LogoDark : Logo}
                         alt="logo"
                         width="200"
                         height="200"

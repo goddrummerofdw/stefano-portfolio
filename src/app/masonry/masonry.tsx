@@ -44,7 +44,7 @@ const Masonry = () => {
                                     setinfo(e)
                                 }}
                             />
-                            
+
                         </motion.div>
                         <AnimatePresence>
                             {showImage && (
@@ -75,15 +75,12 @@ const Masonry = () => {
                                         <div className='h-64 p-8'>
                                             <h2 className='font-bold'>{info.title}</h2>
                                             <p className=''>{info.text}</p>
-
                                         </div>
-
                                     </div>
                                 </div>
 
                             )}
                         </AnimatePresence>
-
                     </motion.div>
 
                 })}

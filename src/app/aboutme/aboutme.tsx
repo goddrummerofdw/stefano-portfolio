@@ -30,7 +30,7 @@ const AboutMe = () => {
 
                     <Image
                         // className='relative translate-y-[100px] lg:w-[400px] lg:h-[500px]'
-                        className='absolute w-[230px] sm:w-[300px] border-2'
+                        className='absolute w-[230px] sm:w-[300px]'
                         src={Redreflection}
                         alt="redguy"
                         sizes='1'
